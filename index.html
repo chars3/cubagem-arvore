@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arvore</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0e0e0e;
+            font-family: 'Arial';
+        }
+
+        .container {
+            margin: 20px 450px;
+            display: inline-block;
+            text-align: center;
+            background-color: #fff;
+            width: 600px;
+            border-radius: 10px;
+            box-shadow: 2px 2px rgb(74, 74, 87);
+            height: 600px;
+            padding: 10px;
+        }
+
+        p {
+            font-size: 22px;
+            margin-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            background-color: orange;
+            color: #fff;
+            display: block;
+            width: 80%;
+            height: 50px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 2px 2px gray;
+            margin: 50px auto;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        input {
+            font-size: 20px;
+            padding: 10px;
+            width: 80%;
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+        div #resultado {
+            margin-top: 20px;
+            font-size: 28px;
+            margin: 15px auto;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Altura(cm):</p>
+        <input type="number" id="altura">
+        
+
+        <p>Raio da Base(cm):</p>
+        <input type="number" id="base">
+        
+
+        <p>Raio do Topo(cm):</p>
+        <input type="number" id="topo">
+
+        <button class="btn" onclick="soma()">Enviar</button>
+        <div id="resultado"></div>
+        
+    </div>
+    <script>
+        function soma () {
+            var altura = document.getElementById('altura').value
+            var base = document.getElementById('base').value
+            var topo = document.getElementById('topo').value
+            var result = document.getElementById('resultado')
+            altura = parseFloat(altura)
+            base = parseFloat(base)
+            topo = parseFloat(topo)
+            total = ((3,14*altura)/3)*((base*base)+(topo*topo)+(base*topo))
+            total = total / 1000000
+            result.innerHTML = total + " m³"    
+        }
+        
+    </script>
+</body>
+</html>
